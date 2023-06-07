@@ -6,8 +6,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/clientApp";
 import { Directory } from "./Directory/Directory";
 
-// comment
-
 export const Navbar: FC = () => {
   const [user, loading, error] = useAuthState(auth);
   return (
