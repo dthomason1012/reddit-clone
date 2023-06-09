@@ -3,6 +3,7 @@ import CreatePostLink from "@/components/Community/CreatePostLink";
 import { Header } from "@/components/Community/Header";
 import { CommunityNotFound } from "@/components/Community/NotFound";
 import { PageContent } from "@/components/Layout/PageContent";
+import { Posts } from "@/components/Posts/Posts";
 import { firestore } from "@/firebase/clientApp";
 import { doc, getDoc } from "firebase/firestore";
 import { GetServerSidePropsContext } from "next";
@@ -24,6 +25,7 @@ const CommunityPage: FC<CommunityPageProps> = ({ communityData }) => {
       <PageContent>
         <>
           <CreatePostLink />
+          <Posts communityData={communityData} />
         </>
         <>
           <div>RHS</div>
@@ -35,7 +37,6 @@ const CommunityPage: FC<CommunityPageProps> = ({ communityData }) => {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   // get community data and pass it to component
-
   try {
     const communityDocRef = doc(
       firestore,
