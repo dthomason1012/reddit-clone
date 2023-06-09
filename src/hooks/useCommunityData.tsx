@@ -125,6 +125,7 @@ export const useCommunityData = () => {
   useEffect(() => {
     if (!user) return;
     getMySnippets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return {

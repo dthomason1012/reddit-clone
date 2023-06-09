@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({ communityData }) => {
       <Flex justify="center" bg="white" flexGrow={1}>
         <Flex width="95%" maxWidth="860px">
           {communityData.imageURL ? (
-            <Image />
+            <Image alt="image" />
           ) : (
             <Icon
               as={FaReddit}
