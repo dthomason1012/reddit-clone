@@ -24,7 +24,7 @@ const CommunityPage: FC<CommunityPageProps> = ({ communityData }) => {
       ...prev,
       currentCommunity: communityData,
     }));
-  }, []);
+  }, [communityData, setCommunityStateValue]);
 
   if (!communityData) {
     return <CommunityNotFound />;
